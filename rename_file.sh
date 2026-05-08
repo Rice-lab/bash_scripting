@@ -14,7 +14,7 @@ COUNT=1
 for FILE in "$FOLDER"/*; do  
     LIST=( $(tr [='.'=] ' ' <<< "$FILE") )
     # %03d is to ensure count is always formatted to 3 digits regardless of how large count gets
-    mv "$FILE" "${PREFIX}$(printf '%03d' $COUNT).${LIST[-1]}"
+    mv "$FILE" "$FOLDER/${PREFIX}$(printf '%03d' $COUNT).${LIST[-1]}"
     (( COUNT++ ))
 done
 
